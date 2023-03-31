@@ -167,4 +167,83 @@ function reverseArray(array) {
     return array.reverse();
 }
 console.log(reverseArray(array))
+
+function kwadrat(liczba) {
+    result = liczba * liczba;
+    return result;
+  }
+  
+  function sumaKwadratow(liczby) {
+    let suma = 0;
+    for (let i = 0; i < liczby.length; i++) {
+      suma += kwadrat(liczby[i]);
+    }
+    return suma;
+  }
+  
+  function wyswietlWynik(wynik) {
+    return console.log("Wynik: " + wynik);
+  }
+  
+  const liczby = [2, 3, 4, 5];
+  
+  let wynik = sumaKwadratow(liczby);
+  
+  wyswietlWynik(wynik);
+
+  function obliczSrednia(liczby) {
+    let suma = 0;
+    for (let i = 0; i < liczby.length; i++) {
+      suma += liczby[i];
+    }
+    srednia = suma / liczby.length;
+    return srednia;
+  }
+  
+  function znajdzNajwiekszaLiczbe(liczby) {
+    let najwieksza = 0;
+    for (let i = 0; i < liczby.length; i++) {
+      if (najwieksza < liczby[i]) {
+        najwieksza = liczby[i];
+      }
+    }
+    return najwieksza;
+  }
+  
+  function wynikAnalizy(liczby) {
+    const srednia = obliczSrednia(liczby);
+    const najwieksza = znajdzNajwiekszaLiczbe(liczby);
+  
+    console.log('Średnia wynosi: ' + srednia);
+    console.log('Największa liczba to: ' + najwieksza);
+  }
+  
+  const liczby = [10, 20, 30, 40, 50];
+  
+  wynikAnalizy(liczby);
+
+  function konwertujNaCelsjusze(fahrenheit) {
+    let celsjusze = (fahrenheit - 32) * 5 / 9;
+    return Math.floor(celsjusze);
+}
+
+function konwertujNaFahrenheity(celsjusze) {
+    let fahrenheit = (celsjusze * 9) / 5 + 32;
+    return fahrenheit;
+}
+
+function wyswietlTemperatury(temperatura, jednostka) {
+    if (jednostka === 'C') {
+        let fahrenheit = konwertujNaFahrenheity(temperatura);
+        console.log(temperatura + '°C to ' + fahrenheit + '°F');
+    } else if (jednostka == 'F') {
+        let celsjusze = konwertujNaCelsjusze(temperatura);
+        console.log(temperatura + '°F to ' + celsjusze + '°C');
+    } else {
+        console.log('Niepoprawna jednostka temperatury');
+    }
+}
+
+wyswietlTemperatury(100, 'F');
+wyswietlTemperatury(38, 'C');
 */
